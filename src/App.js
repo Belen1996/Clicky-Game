@@ -52,26 +52,25 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-      <nav class="navbar">
-          <ul>
-              <li class="brand">
-                  <a href="/">Clicky Game</a>
-              </li>
-              <li>{this.state.message}</li>
-              <li>{this.state.score}{this.state.topScore}</li>
-          </ul>
-      </nav>
-      <header class="header">
-          <section id="board"><BoardGame onCardSelected={this.cardSelected}/></section>
-          <h1>Clicky Game!</h1>
-          <h2>Click on an image to earn points, but don't click on the same one more than once!</h2>
-      </header>
-      <footer class="footer">
-          <div class="bottom">Copy Right
-          </div>
-      </footer>
-  </div>
+        <div>
+            <nav class="navbar">
+                <ul>
+                    <li class="brand">
+                        <a href="/">Clicky Game!</a>
+                    </li>
+                    <li class="">{this.state.message}</li>
+                </ul>
+                <div style={{float: "right"}}>Score: {this.state.score} | Top Score: {this.state.topScore}</div>
+            </nav>
+            <header class="header">
+                <h1>Clicky Game!</h1>
+                <h2>Click on an image to earn points, but don't click on the same one more than once!</h2>
+            </header>
+            <section id="board"><BoardGame onCardSelected={this.cardSelected}/></section>
+            <footer class="footer">
+                <div class="bottom">Copyright Belen Fernandez &copy;2018</div>
+            </footer>
+        </div>
     );
   }
 }

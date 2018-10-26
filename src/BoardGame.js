@@ -16,23 +16,23 @@ function shuffle(array) {
 const cards = [
     {
         cardId: 1,
-        cardImage: "Blossom.jpg"
+        cardImage: "Blossom.png"
     },
     {
         cardId: 2,
-        cardImage: "Bravo.jpg"   
+        cardImage: "Bravo.png"   
     },
     {
         cardId: 3,
-        cardImage: "Bubbles.jpg"
+        cardImage: "Bubbles.png"
     },
     {
         cardId: 4,
-        cardImage: "Buttercup.jpg"
+        cardImage: "Buttercup.png"
     },
     {
         cardId: 5,
-        cardImage: "Courage.jpg"
+        cardImage: "Courage.png"
     },
     {
         cardId: 6,
@@ -40,11 +40,11 @@ const cards = [
     },
     {
         cardId: 7,
-        cardImage: "Dexter.jpg"
+        cardImage: "Dexter.png"
     },
     {
         cardId: 8,
-        cardImage: "Didi.jpg"
+        cardImage: "Didi.png"
     },
     {
         cardId: 9,
@@ -60,7 +60,7 @@ const cards = [
     },
     {
         cardId: 12,
-        cardImage: "Scooby.jpg"
+        cardImage: "Scooby.png"
     }];
 
 class BoardGame extends Component {
@@ -99,19 +99,19 @@ class BoardGame extends Component {
 
 render() {
     return(
-        <div id="board-container">
+        <main id="board-container" className="container">
         {this.state.cardMatrix.map(r => {
             return(
                 <div className="card-row">
                     {r.map(c => { return(
-                        <div id={"card-" + c.cardId} className="card">
-                        <img src={"./images/" + c.cardImage} onClick={() => this.onCardSelectedHandler(c.cardId)} />
+                        <div id={"card-" + c.cardId} role="img" aria-label="click item" className="click-item">
+                            <img src={"./images/" + c.cardImage} onClick={() => this.onCardSelectedHandler(c.cardId)} alt={c.cardImage}/>                        
                         </div>
                     )})}
                 </div>
             );
         })}
-        </div>);
+        </main>);
      }
 }   
 
